@@ -1,0 +1,62 @@
+			<div>
+				<!--
+				<form role="form" action="/test1" method="post">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Enter email">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleInputFile">File input</label>
+						<input type="file" id="exampleInputFile">
+						<p class="help-block">Example block-level help text here.</p>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox"> Check me out</label>
+					</div>
+					<button type="submit" class="btn btn-default">Login</button>
+				</form>
+				-->
+				<% if(username) { %>
+				<div class="alert alert-info" role="alert"><span>Welcome, <%=username%>!</span><a class="pull-right" href="/signout">Sign out</a></div>
+				<!--
+				<div class="panel panel-default">
+				<div class="panel-body media">
+					<a class="media-left" >
+						<img class="img-thumbnail-me" src="/img/img2.jpg" alt="Yezersky" style="width: 64px; height: 64px;">
+					</a>
+					<div class="media-body">
+						<p>welcome to Tiny Blog!</p>
+						<a class="pull-right" href="/signout">Sign out</a>
+					</div>
+				</div>
+				</div>
+				-->
+				<% } %>
+				<!--
+				<form class="form" role="login" action="/signin" method="post">
+					<div class="form-group">
+						<input type="username" class="form-control" name="username" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password">
+					</div>
+					<button type="submit" class="btn btn-default">Sign in</button>
+					<a href="/signup" class="navbar-signup">Sign up</a>
+				</form>
+				-->
+				<h4>Recent posts</h4>
+				<div class="list-group">
+				<% if(postsList) { %>
+				<% postsList.forEach(function (post) { %>
+  					<a href="/post/<%=post.get('postId')%>" class="list-group-item">
+						<%=post.get('postTitle') %>
+  					</a>
+				<% })
+			 	} %>
+			 	</div>
+			</div>
